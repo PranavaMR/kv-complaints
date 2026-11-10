@@ -239,20 +239,17 @@ def render(ctx: Context, tokenizer) -> Rendered:
     separator = "#" * (len(block) + 10)
     templated = tokenizer.apply_chat_template([{"role": "user", "content": block + separator}],
                                               add_generation_prompt=True, tokenize=False)
-    context_text = templated.split(separator)[0]
-
-    encoded = tokenizer(context_text, add_special_tokens=False, return_offsets_mapping=True)
-    ids, token_starts = encoded["input_ids"], [start for start, _ in encoded["offset_mapping"]]
+    templated_context = templated.split(separator)[0]
+    encoded = tokenizer(templated_context, add_special_tokens=False, return_offsets_mapping=True)    ids, token_starts = encoded["input_ids"], [start for start, _ in encoded["offset_mapping"]]
 
     # A token belongs to the review whose line contains the token's first character.
-    char_starts, pos = [], context_text.index(block)
+    char_starts, pos = [], templated_context.index(block)
     for line in lines:
         char_starts.append(pos)
         pos += len(line) + 2
     starts = [next(t for t, s in enumerate(token_starts) if s >= c) for c in char_starts]
     ends = starts[1:] + [len(ids)]
-    return Rendered(context_text, torch.tensor([ids], dtype=torch.long), list(zip(starts, ends)), (0, starts[0]))
-
+    return Rendered(block, torch.tensor([ids], dtype=torch.long), list(zip(starts, ends)), (0, starts[0]))
 
 if __name__ == "__main__":
     built = build_contexts(config.YELP_DIR, config.SEED)

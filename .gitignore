@@ -1,0 +1,6 @@
+# Raw Yelp text and raw model answers: never commit (Yelp Terms of Use)
+data/
+yelp/
+__pycache__/
+.pytest_cache/
+*.pyc

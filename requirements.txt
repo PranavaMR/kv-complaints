@@ -1,0 +1,8 @@
+# Pinned for the study. Install torch first (Colab already has a CUDA build).
+# After installing, run:  pip freeze > requirements.lock   and commit the lock file.
+kvpress==0.5.5
+transformers==4.57.*
+accelerate
+pandas
+matplotlib
+pytest

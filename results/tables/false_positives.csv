@@ -1,0 +1,6 @@
+method,keyword_fires,fp_rate,q2_yes
+Full,1 of 36,0.028,0 of 12
+Random,0 of 36,0.0,1 of 12
+StreamingLLM,0 of 36,0.0,0 of 12
+SnapKV,1 of 36,0.028,0 of 12
+Knorm,2 of 36,0.056,0 of 12

@@ -1,0 +1,5 @@
+method,misses,retained_deprioritised,retained_unreadable,evicted_recovered,evicted
+Random,7,1,6,0,0
+StreamingLLM,5,1,0,0,4
+SnapKV,2,1,1,0,0
+Knorm,4,0,0,1,3

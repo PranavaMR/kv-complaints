@@ -42,7 +42,7 @@ METHODS = ("full", "random", "streaming_llm", "snapkv", "knorm")   # time cut 1:
 COMPRESSION_RATIO = 0.75          # fraction REMOVED: 25% kept
 
 N_RECOMMENDATIONS = 5             # PRE-REGISTERED calibration rule: may change once (to 8 or 3); log it
-Q1_MAX_NEW_TOKENS = 256
+Q1_MAX_NEW_TOKENS = 512
 Q2_MAX_NEW_TOKENS = 48
 
 TAU = 0.2                         # PRE-REGISTERED

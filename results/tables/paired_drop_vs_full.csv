@@ -1,0 +1,17 @@
+method,position,difference,ci_low,ci_high
+Random,1,-0.25,-0.5,0.0
+Random,15,-0.083,-0.25,0.0
+Random,30,-0.25,-0.5,0.0
+Random,all,-0.194,-0.306,-0.083
+StreamingLLM,1,-0.25,-0.5,0.0
+StreamingLLM,15,-0.083,-0.25,0.0
+StreamingLLM,30,0.083,-0.167,0.333
+StreamingLLM,all,-0.083,-0.222,0.056
+SnapKV,1,-0.083,-0.25,0.0
+SnapKV,15,0.0,0.0,0.0
+SnapKV,30,0.083,-0.167,0.333
+SnapKV,all,0.0,-0.111,0.111
+Knorm,1,0.583,0.333,0.833
+Knorm,15,-0.083,-0.25,0.0
+Knorm,30,-0.167,-0.5,0.083
+Knorm,all,0.111,0.0,0.25

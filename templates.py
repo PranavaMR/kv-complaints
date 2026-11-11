@@ -1,6 +1,5 @@
 """
 SYNTHETIC complaint templates (2 per aspect) and neutral length fillers.
-DRAFT: hand-write your own, then freeze and commit before any model output.
 Fillers are appended to match the restaurant's median review length; they must contain no lexicon term.
 """
 

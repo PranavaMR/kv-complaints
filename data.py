@@ -240,7 +240,8 @@ def render(ctx: Context, tokenizer) -> Rendered:
     templated = tokenizer.apply_chat_template([{"role": "user", "content": block + separator}],
                                               add_generation_prompt=True, tokenize=False)
     templated_context = templated.split(separator)[0]
-    encoded = tokenizer(templated_context, add_special_tokens=False, return_offsets_mapping=True)    ids, token_starts = encoded["input_ids"], [start for start, _ in encoded["offset_mapping"]]
+    encoded = tokenizer(templated_context, add_special_tokens=False, return_offsets_mapping=True)    
+    ids, token_starts = encoded["input_ids"], [start for start, _ in encoded["offset_mapping"]]
 
     # A token belongs to the review whose line contains the token's first character.
     char_starts, pos = [], templated_context.index(block)

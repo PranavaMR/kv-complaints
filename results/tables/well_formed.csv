@@ -1,0 +1,6 @@
+method,well_formed,share
+Full,26 of 48,0.542
+Random,11 of 48,0.229
+StreamingLLM,36 of 48,0.75
+SnapKV,32 of 48,0.667
+Knorm,40 of 48,0.833

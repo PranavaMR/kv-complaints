@@ -1,0 +1,6 @@
+detector,rows,tp,fp,fn,precision,recall,f1
+keyword,30 planted,5,0,0,1.0,1.0,1.0
+citation,30 planted,3,5,2,0.375,0.6,0.462
+either,30 planted,5,5,0,0.5,1.0,0.667
+both,30 planted,3,0,2,1.0,0.6,0.75
+keyword,6 controls x 3 aspects,0,0,0,,,

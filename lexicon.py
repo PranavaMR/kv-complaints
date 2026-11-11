@@ -1,6 +1,5 @@
 """
 Keyword lexicon: regexes per aspect, matched case-insensitively as whole words.
-DRAFT: rewrite in your own words, then freeze and commit before any model output.
 """
 
 LEXICON = {

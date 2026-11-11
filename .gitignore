@@ -4,3 +4,8 @@ yelp/
 __pycache__/
 .pytest_cache/
 *.pyc
+
+# Google Drive shortcut files
+*.gsheet
+*.gdoc
+*.gslides

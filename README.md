@@ -3,9 +3,10 @@
 Does KV-cache eviction (25% kept) drop a planted customer complaint before Qwen2.5 writes
 advice for a restaurant owner? 12 Yelp restaurants, 48 contexts, 5 methods, 240 runs.
 
-## Run it
+# Full summary
+In decisions.md in the logs folder and memo.pdf.
 
-On your laptop (needs only `pip install "transformers==4.57.*"`), with the two Yelp JSON files in `yelp/`:
+## To run
 
 ```bash
 python data.py          # 48 contexts -> results/manifest.json, data/review_texts.json
@@ -49,8 +50,13 @@ python analysis.py          # every table and figure, from saved results
 - **Verdict numbers:** count StreamingLLM, SnapKV and Knorm as eviction methods; Random is the control.
 - **Raw answers** stay in the git-ignored `data/`, because they can quote real reviews.
 
-## AI use
 
-TO FILL IN before submitting: which tools you used and for what. For example: pipeline code
-drafted with Claude (Anthropic), which also reviewed the tests; say who wrote `tests/conftest.py`
-and `tests/kvhelpers.py`, and which parts are your own.
+## DISCLAIMERS: 
+•	No pre-registration was written before the runs. The rules that came from the task were fixed before any results existed: the 0.2 cut-off for "thrown away", the calibration rule and the main test above. The rule for choosing the detector was decided after labelling.
+•	The baseline was low. Because Full mentioned the complaint only 19% of the time, there was little room for any method to drop by 10 points, so the main test was hard to meet.
+•	The sample is small. 12 restaurants, one small model (1.5B), one compression level (75% thrown away), and only 5 real mentions in the labelled sample.
+•	The answer limit cut answers short. At 256 tokens every calibration answer was cut off, so the limit was raised to 512 before the real runs. Even so, 25 of 48 Full answers hit the limit. I did not raise it again, because that would have meant redoing all 240 runs after seeing results.
+•	AI assistance. Claude wrote the pipeline code. I wrote the four tests ( except test_licence.py which needed AI assistance as my code had too many loopholes ) and wrote the word lists (lexicon.py) and the six synthetic complaints (templates.py).
+•	My own decisions, and Claude's, are listed in logs/decisions.md.
+
+
